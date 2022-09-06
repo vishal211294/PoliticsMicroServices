@@ -1,0 +1,21 @@
+server:
+  port: 9070
+spring:
+  application:
+    name: People-development-service
+  zipkin:
+    base-url: http://localhost:9411/
+  datasource:
+    url: jdbc:mysql://localhost:3306/peopledevelopment
+    username: peopledevelopment
+    password: peopledevelopment
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
