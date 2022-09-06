@@ -1,0 +1,31 @@
+server:
+  port: 9190
+
+spring:
+  application:
+    name: POLITICS-GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: POLITICAL_PARTY
+        uri: lb://POLITICAL-PARTY-SERVICE
+        predicates:
+          - Path=/political-party/**
+      - id: POLITICAL_LEADER
+        uri: lb://POLITICAL-LEADER-SERVICE
+        predicates:
+          - Path=/political-leader/**
+      - id: PEOPLE_DEVELOPMENT
+        uri: lb://PEOPLE-DEVELOPMENT-SERVICE
+        predicates:
+          - Path=/people-development/**
+          
+          
+eureka:
+  instance:
+    prefer-ip-address: true
+            
+          
