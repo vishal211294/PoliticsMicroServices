@@ -1,0 +1,20 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: Political-leader-service
+  zipkin:
+    base-url: http://localhost:9411/
+  datasource:
+    url: jdbc:mysql://localhost:3306/politicalleader
+    username: politicalleader
+    password: politicalleader
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+ 
